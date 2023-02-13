@@ -36,5 +36,9 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test sending simple text
+      env:
+        ATG_EMAIL: ${{ secrets.ATG_EMAIL }}
+        ATG_EMAIL_PW: ${{ secrets.ATG_EMAIL_PW }}
+        YUSHIN_EMAIL: ${{ secrets.YUSHIN_EMAIL }}
       run: |
-        python3 CLI.py send-simple ${{ secrets.ATG_EMAIL }} ${{ secrets.ATG_EMAIL_PW }} ${{ secrets.YUSHIN_EMAIL }} push_action "test email"
+        python3 CLI.py send-simple $ATG_EMAIL $ATG_EMAIL_PW $YUSHIN_EMAIL push_action "test email"
