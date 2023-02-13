@@ -2,7 +2,7 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-def send_simpleNotice(sender_email, password, receiver_email, subject, text_message, ):
+def send_simpleNotice(sender_email, password, receiver_email, subject, text_message):
     smtp_server = 'smtp.gmail.com'
     port = 587
     
