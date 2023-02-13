@@ -1,5 +1,5 @@
 import click
-import send
+import utils.send as send
 
 @click.group()
 def CLI():
